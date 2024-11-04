@@ -88,3 +88,33 @@ body, html {
     line-height: 1.5em;
     letter-spacing: 0em;
 }
+
+
+/* 모바일 전용 스타일 */
+@media (max-width: 600px) {
+    #wrap {
+        padding: 10px;
+    }
+
+    .templatearea, #area1, #area2 {
+        padding: 10px;
+    }
+
+    .text-container .text, #area1 .text, #area2 .text {
+        font-size: 30px;
+        line-height: 1.2em;
+    }
+
+    .text-container .date, .text-container .location {
+        font-size: 20px;
+    }
+
+    .message {
+        font-size: 20px;
+        line-height: 1.3em;
+    }
+
+    .img {
+        max-width: 100%;
+    }
+}
