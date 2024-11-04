@@ -1,30 +1,54 @@
-body, html {
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
-.hero {
-    position: relative;
+body, html {
+    font-family: 'Nanum Myeongjo', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    background: url('background-image.jpg') no-repeat center center/cover;
+    background-color: #F7F8F9;
 }
 
-.overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#wrap {
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
     text-align: center;
-    color: white;
+    margin-top: 20px;
 }
 
-.details {
-    padding: 20px;
+.background {
+    width: 100%;
+    height: auto;
+}
+
+#area2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    padding: 40px 0;
 }
 
-audio {
-    display: none; /* 사용자가 보지 못하게 숨김 */
+.item img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+.message-container {
+    margin: 30px 0;
+}
+
+
+.message {
+    font-size: 2em !important; /* 글자 크기를 크게 조정 */
+    color: #333333 !important;
+    line-height: 1.5em !important;
+    text-align: center !important;
+    font-weight: bold !important;
 }
