@@ -6,35 +6,71 @@
 
 body, html {
     font-family: 'Nanum Myeongjo', serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #F7F8F9;
+    background-color: #f9f9f9;
 }
 
 #wrap {
     width: 100%;
     max-width: 800px;
-    overflow: hidden;
-    text-align: center;
-    margin-top: 20px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.background {
+.templatearea {
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* 첫 번째 영역 (area1) 스타일 */
+#area1 {
+    background-color: #fff;
+    padding: 20px;
+}
+
+#area1 .img {
     width: 100%;
+    max-width: 800px;
     height: auto;
 }
 
-#area2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 40px 0;
+.text-container {
+    position: relative;
+    color: #C68F69;
 }
 
-.item img {
+.text-container .text {
+    font-size: 55px;
+    font-weight: bold;
+    line-height: 1.4em;
+    letter-spacing: 0.24em;
+}
+
+.text-container .ampersand {
+    margin: 10px auto;
+}
+
+.text-container .ampersand img {
+    width: 50px;
+    height: auto;
+}
+
+.text-container .date,
+.text-container .location {
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 1.4em;
+    color: #C68F69;
+    margin-top: 20px;
+}
+
+/* 두 번째 영역 (area2) 스타일 */
+#area2 {
+    background-color: #fff;
+    padding: 20px;
+}
+
+#area2 .img {
     width: 100%;
     max-width: 800px;
     height: auto;
@@ -42,13 +78,13 @@ body, html {
 
 .message-container {
     margin: 30px 0;
+    padding: 0 20px;
+    text-align: center;
 }
 
-
 .message {
-    font-size: 2em !important; /* 글자 크기를 크게 조정 */
-    color: #333333 !important;
-    line-height: 1.5em !important;
-    text-align: center !important;
-    font-weight: bold !important;
+    font-size: 34px;
+    color: #333333;
+    line-height: 1.5em;
+    letter-spacing: 0em;
 }
