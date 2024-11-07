@@ -12,6 +12,7 @@ body, html {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    flex-direction: column;
     overflow-x: hidden;
 }
 
@@ -22,6 +23,7 @@ body, html {
     overflow: hidden;
     text-align: center;
     position: relative;
+    margin: 20px 0;
 }
 
 /* 첫 번째 영역 */
@@ -138,6 +140,186 @@ body, html {
     margin: 20px 0;
 }
 
+/* 연락처 섹션 스타일 */
+.call {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.grid_box {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0;
+}
+
+/* 연락처 제목 스타일 */
+.contact-title {
+    color: #0066cc;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* 연락처 아이콘 스타일 */
+.grid_box img {
+    width: 24px;
+    height: 24px;
+}
+
+/* 추가 정보 버튼 스타일 */
+.info_detail {
+    background-color: #C68F69;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+/* 연락처 목록 스타일 */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 연락처 세부 정보 */
+.list_con {
+    text-align: left;
+    color: #333;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.name {
+    font-weight: bold;
+    color: #333;
+    margin-left: 10px;
+}
+
+.btn_wrap {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Contact Section Styling */
+.contact-area {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container {
+    display: flex;
+    gap: 60px; /* 신랑과 신부 사이 간격 */
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Nanum Myeongjo', serif;
+    color: #333;
+    width: 250px;
+}
+
+.contact-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+.contact-links img {
+    width: 24px;
+    height: 24px;
+    margin: 5px;
+}
+
+.relative-section {
+    margin-top: 15px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.relative-section h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.relative-section p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+}
+
+.relative-section span {
+    font-weight: bold;
+}
+
+.relative-section img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Gallery Section */
+#gallery-section {
+    margin-top: 50px;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px 0;
+}
+
+/* Title Image Styling */
+.gallery-title img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    display: block;
+    width: 100%;
+    padding-top: 100%; /* Aspect ratio */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.img_frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Hidden by default, only for background styling */
+}
+
+/* Lightbox (PhotoSwipe) Styles */
+.pswp {
+    z-index: 1000;
+}
+
+
+
 /* 반응형 디자인 - 태블릿과 모바일 */
 @media (max-width: 1024px) {
     .name1, .name2 {
@@ -152,9 +334,36 @@ body, html {
         font-size: 28px;
     }
 
+    .event-date, .event-location {
+        font-size: 28px;
+    }
+
     .message-container {
         font-size: 24px;
         line-height: 1.6;
+    }
+
+    .grid_box {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contact-title {
+        font-size: 16px;
+    }
+    .btn_wrap img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 5px;
     }
 }
 
@@ -171,8 +380,40 @@ body, html {
         font-size: 22px;
     }
 
+    .event-date, .event-location {
+        font-size: 22px;
+    }
+
     .message-container {
         font-size: 20px;
         line-height: 1.4;
+    }
+
+    .grid_box {
+        gap: 15px;
+    }
+    .contact-title {
+        font-size: 14px;
+    }
+    .info_detail {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    .btn_wrap img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .gallery-title img {
+        width: 90%;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     }
 }
