@@ -92,9 +92,17 @@ body, html {
     flex-direction: column;
     align-items: center;
     color: #C68F69;
+    margin-top: 20px; /* 위치 조정 */
+    padding: 10px 0;
+    position: relative; /* 절대 위치를 상대 위치로 변경 */
+}
+
+.event-date, .event-location {
     font-size: 35px;
     font-weight: bold;
     line-height: 1.4em;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 /* 초대 메시지 */
@@ -211,6 +219,16 @@ body, html {
         font-size: 20px;
     }
 
+    .event-details {
+        margin-top: 10px; /* 상단 여백을 줄여 위치 조정 */
+        padding: 5px 0;
+    }
+    
+    .event-date, .event-location {
+        font-size: 22px; /* 작은 화면에서 폰트 크기 줄이기 */
+        line-height: 1.2em;
+    }
+
     .grid_box {
         flex-direction: column;
         gap: 20px;
@@ -245,6 +263,16 @@ body, html {
     .message-container {
         font-size: 18px;
         padding: 0 5px;
+    }
+
+    .event-details {
+        margin-top: 5px;
+        padding: 5px 0;
+    }
+    
+    .event-date, .event-location {
+        font-size: 18px;
+        line-height: 1.2em;
     }
 
     .grid_box {
