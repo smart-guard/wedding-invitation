@@ -204,19 +204,16 @@ body, html {
 /* 반응형 디자인 - 태블릿과 모바일 */
 @media (max-width: 1024px) {
     .name1, .name2 {
-        font-size: 45px;
+        font-size: 5vw;
     }
 
     .ampersand-img {
-        width: 40px;
-    }
-
-    .event-details {
-        font-size: 28px;
+        width: 4vw;
     }
 
     .message-container {
-        font-size: 20px;
+        font-size: 1em;
+        padding: 0 5px;
     }
 
     .event-details {
@@ -225,7 +222,7 @@ body, html {
     }
     
     .event-date, .event-location {
-        font-size: 22px; /* 작은 화면에서 폰트 크기 줄이기 */
+        font-size: 5vw; /* 모바일에서 축소된 날짜 및 장소 폰트 크기 */
         line-height: 1.2em;
     }
 
@@ -249,11 +246,11 @@ body, html {
     }
 
     .name1, .name2 {
-        font-size: 35px;
+        font-size: 6vw; /* 모바일에서 자연스럽게 줄어든 이름 크기 */
     }
 
     .ampersand-img {
-        width: 30px;
+        width: 3vw;
     }
 
     .event-details {
@@ -261,7 +258,7 @@ body, html {
     }
 
     .message-container {
-        font-size: 18px;
+        font-size: 0.9em;
         padding: 0 5px;
     }
 
@@ -271,7 +268,7 @@ body, html {
     }
     
     .event-date, .event-location {
-        font-size: 18px;
+        font-size: 5vw; /* 모바일에서 축소된 날짜 및 장소 폰트 크기 */
         line-height: 1.2em;
     }
 
@@ -293,5 +290,21 @@ body, html {
 
     .gallery-item {
         padding-top: calc(33.33% - 5px);
+    }
+}
+
+
+@media (max-width: 480px) {
+    .name1, .name2 {
+        font-size: 8vw; /* 모바일에서 더 축소된 이름 크기 */
+    }
+
+    .ampersand-img {
+        width: 4vw;
+    }
+
+    .event-date, .event-location {
+        font-size: 6vw; /* 모바일에서 축소된 날짜 및 장소 폰트 크기 */
+        line-height: 1.2em;
     }
 }
