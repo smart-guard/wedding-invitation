@@ -278,6 +278,26 @@ body, html {
     padding: 20px 0;
 }
 
+/* 갤러리 그리드 */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 가로 3개의 열 */
+    gap: 10px; /* 썸네일 사이의 간격 */
+    max-width: 800px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+/* 갤러리 아이템 */
+.gallery-item {
+    display: block;
+    width: 100%;
+    padding-top: 100%; /* 정사각형 비율 유지 */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 10px; /* 둥근 모서리 추가 */
+}
+
 /* Title Image Styling */
 .gallery-title img {
     width: 100%;
@@ -286,32 +306,14 @@ body, html {
     margin-bottom: 20px;
 }
 
-/* Gallery Grid */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Gallery Thumbnail Styles */
-.gallery-item {
-    width: 150px; /* 원하는 썸네일 너비 */
-    height: 150px; /* 원하는 썸네일 높이 */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
 .img_frame {
-    width: 100%; /* 썸네일의 너비에 맞추기 */
-    height: 100%; /* 썸네일의 높이에 맞추기 */
-    object-fit: cover; /* 썸네일 크기에 맞게 잘라내기 */
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0; /* 기본 이미지를 덮는 프레임 스타일 */
+    width: 100%;
+    height: 100%;
+    opacity: 1; /* 이미지가 보이도록 설정 */
+    display: none; /* 프레임 숨기기 */
 }
 
 /* Lightbox (PhotoSwipe) Styles */
@@ -364,8 +366,7 @@ body, html {
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 5px;
+        grid-template-columns: repeat(3, 1fr); /* 태블릿에서는 가로 2개 */
     }
 }
 
@@ -416,7 +417,7 @@ body, html {
         width: 90%;
     }
     .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        grid-template-columns: repeat(3, 1fr); /* 모바일에서는 가로 1개 */
     }
 
 

@@ -172,6 +172,42 @@
         </div>
     </section>
     
-   
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var galleryElements = document.querySelectorAll('.gallery-item');
+        
+            // 이미지 배열 생성
+            var items = Array.from(galleryElements).map(function(el) {
+                var size = el.getAttribute('data-size').split('x');
+                return {
+                    src: el.getAttribute('href'),
+                    w: parseInt(size[0], 10),
+                    h: parseInt(size[1], 10)
+                };
+            });
+        
+            // 이미지 클릭 시 PhotoSwipe 열기
+            galleryElements.forEach(function(el, index) {
+                el.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    openPhotoSwipe(index);
+                });
+            });
+        
+            function openPhotoSwipe(index) {
+                var pswpElement = document.querySelectorAll('.pswp')[0];
+                var options = {
+                    index: index,
+                    bgOpacity: 0.8,
+                    showHideOpacity: true
+                };
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+                gallery.init();
+            }
+        });
+        </script>
+            
+
 </body>
 </html>
