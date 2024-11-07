@@ -17,13 +17,14 @@ body, html {
 }
 
 /* Wrapper */
-#wrap {
-    width: 800px;
-    max-width: 100%;
+#wrap, #gallery-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
     overflow: hidden;
     text-align: center;
     position: relative;
-    margin: 20px 0;
+    padding: 0 15px;
 }
 
 /* 첫 번째 영역 */
@@ -126,11 +127,12 @@ body, html {
 /* 초대 메시지 */
 .message-container {
     color: #333;
-    font-size: 28px;
-    line-height: 1.8;
+    font-size: 1.2em;
+    line-height: 1.5;
     font-family: 'Nanum Myeongjo', serif;
     text-align: center;
     margin-top: 50px;
+    padding: 0 10px;
 }
 
 /* 장식 이미지 */
@@ -281,10 +283,10 @@ body, html {
 /* 갤러리 그리드 */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 가로 3개의 열 */
-    gap: 10px; /* 썸네일 사이의 간격 */
+    grid-template-columns: repeat(3, 1fr); /* 가로 3개 열 유지 */
+    gap: 10px;
     max-width: 800px;
-    margin: 0 auto; /* 가운데 정렬 */
+    margin: 0 auto;
 }
 
 /* 갤러리 아이템 */
@@ -292,10 +294,21 @@ body, html {
     display: block;
     width: 100%;
     padding-top: 100%; /* 정사각형 비율 유지 */
+    height: auto; /* 높이를 자동으로 설정 */
     background-size: cover;
     background-position: center;
     position: relative;
-    border-radius: 10px; /* 둥근 모서리 추가 */
+    opacity: 1; /* 배경 이미지가 보이도록 */
+}
+
+/* 이미지 프레임 */
+.img_frame {
+    display: block; /* 이미지 보이도록 설정 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1; /* 이미지 투명하지 않게 설정 */
+    display: none; /* 프레임 숨기기 */
 }
 
 /* Title Image Styling */
@@ -304,16 +317,6 @@ body, html {
     max-width: 800px;
     height: auto;
     margin-bottom: 20px;
-}
-
-.img_frame {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 1; /* 이미지가 보이도록 설정 */
-    display: none; /* 프레임 숨기기 */
 }
 
 /* Lightbox (PhotoSwipe) Styles */
@@ -371,6 +374,11 @@ body, html {
 }
 
 @media (max-width: 600px) {
+
+    #wrap, #gallery-section {
+        padding: 0 10px; /* 모바일에서 양쪽 여백 조정 */
+    }
+
     .name1, .name2 {
         font-size: 35px;
     }
@@ -388,8 +396,8 @@ body, html {
     }
 
     .message-container {
-        font-size: 20px;
-        line-height: 1.4;
+        font-size: 1em; /* 모바일에서 폰트 크기 조정 */
+        padding: 0 5px; /* 모바일에서 여백 조정 */
     }
 
     .grid_box {
@@ -417,7 +425,7 @@ body, html {
         width: 90%;
     }
     .gallery-grid {
-        grid-template-columns: repeat(3, 1fr); /* 모바일에서는 가로 1개 */
+        gap: 5px; /* 모바일에서 썸네일 간격을 좁혀서 조정 */
     }
 
 
