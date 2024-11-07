@@ -424,8 +424,16 @@ body, html {
     .gallery-title img {
         width: 90%;
     }
+    
     .gallery-grid {
-        gap: 5px; /* 모바일에서 썸네일 간격을 좁혀서 조정 */
+        gap: 5px; /* 모바일에서 썸네일 간격을 줄임 */
+        padding: 0 10px; /* 양쪽에 패딩을 추가하여 화면에 맞춤 */
+    }
+
+    .gallery-item {
+        padding-top: calc(33.33% - 10px); /* 모바일에서 각 썸네일의 크기를 줄여 화면에 맞춤 */
+        background-size: cover;
+        background-position: center;
     }
 
 
