@@ -64,12 +64,12 @@ body, html {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 332px; /* 첫 번째 이름의 위치 */
+    top: 30%;
 }
 
-/* 첫 번째 이름 */
-.name1 {
-    font-size: 55px;
+/* 이름 크기 */
+.name1, .name2 {
+    font-size: 55px; /* PC용 고정 크기 */
     font-weight: bold;
     color: #C68F69;
     letter-spacing: 0.24em;
@@ -79,55 +79,28 @@ body, html {
 
 /* & 기호 */
 .ampersand-img {
-    width: 51px;
+    width: 50px;
     height: auto;
-    margin: 20px 0; /* 이름 사이 간격 */
+    margin: 10px 0;
     position: relative;
-    top: 20px; /* & 기호 위치 조정 */
-}
-
-/* 두 번째 이름 */
-.name2 {
-    font-size: 55px;
-    font-weight: bold;
-    color: #C68F69;
-    letter-spacing: 0.24em;
-    line-height: 1.4em;
-    margin-top: 50px; /* & 기호와 두 번째 이름 사이의 간격 */
 }
 
 /* 날짜 및 장소 정보 */
 .event-details {
-    position: absolute;
-    top: 1059px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #C68F69;
-}
-
-/* 날짜 정보 */
-.event-date {
     font-size: 35px;
     font-weight: bold;
     line-height: 1.4em;
-    letter-spacing: 0em;
-    margin-bottom: 15px; /* 간격 추가 */
-}
-
-/* 장소 정보 */
-.event-location {
-    font-size: 35px;
-    line-height: 1.4em;
-    letter-spacing: 0em;
-    text-align: center;
 }
 
 /* 초대 메시지 */
 .message-container {
     color: #333;
-    font-size: 1.2em;
+    font-size: 24px;
     line-height: 1.5;
     font-family: 'Nanum Myeongjo', serif;
     text-align: center;
@@ -143,7 +116,7 @@ body, html {
 }
 
 /* 연락처 섹션 스타일 */
-.call {
+.call, .contact-area {
     width: 100%;
     max-width: 800px;
     text-align: center;
@@ -171,17 +144,6 @@ body, html {
     height: 24px;
 }
 
-/* 추가 정보 버튼 스타일 */
-.info_detail {
-    background-color: #C68F69;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 20px 0;
-}
-
 /* 연락처 목록 스타일 */
 .contact-list {
     display: flex;
@@ -195,81 +157,6 @@ body, html {
     color: #333;
     font-size: 16px;
     margin: 5px 0;
-}
-
-.name {
-    font-weight: bold;
-    color: #333;
-    margin-left: 10px;
-}
-
-.btn_wrap {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-}
-
-/* Contact Section Styling */
-.contact-area {
-    margin-top: 50px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-
-.contact-container {
-    display: flex;
-    gap: 60px; /* 신랑과 신부 사이 간격 */
-}
-
-.contact-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Nanum Myeongjo', serif;
-    color: #333;
-    width: 250px;
-}
-
-.contact-title {
-    font-weight: bold;
-    font-size: 18px;
-    color: #0066cc;
-    margin-bottom: 10px;
-}
-
-.contact-links img {
-    width: 24px;
-    height: 24px;
-    margin: 5px;
-}
-
-.relative-section {
-    margin-top: 15px;
-    text-align: left;
-    font-size: 16px;
-}
-
-.relative-section h4 {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.relative-section p {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin: 5px 0;
-}
-
-.relative-section span {
-    font-weight: bold;
-}
-
-.relative-section img {
-    width: 20px;
-    height: 20px;
 }
 
 /* Gallery Section */
@@ -289,26 +176,13 @@ body, html {
     margin: 0 auto;
 }
 
-/* 갤러리 아이템 */
 .gallery-item {
     display: block;
     width: 100%;
     padding-top: 100%; /* 정사각형 비율 유지 */
-    height: auto; /* 높이를 자동으로 설정 */
     background-size: cover;
     background-position: center;
     position: relative;
-    opacity: 1; /* 배경 이미지가 보이도록 */
-}
-
-/* 이미지 프레임 */
-.img_frame {
-    display: block; /* 이미지 보이도록 설정 */
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 1; /* 이미지 투명하지 않게 설정 */
-    display: none; /* 프레임 숨기기 */
 }
 
 /* Title Image Styling */
@@ -318,14 +192,6 @@ body, html {
     height: auto;
     margin-bottom: 20px;
 }
-
-/* Lightbox (PhotoSwipe) Styles */
-.pswp {
-    z-index: 1000;
-}
-
-
-
 
 /* 반응형 디자인 - 태블릿과 모바일 */
 @media (max-width: 1024px) {
@@ -341,42 +207,27 @@ body, html {
         font-size: 28px;
     }
 
-    .event-date, .event-location {
-        font-size: 28px;
-    }
-
     .message-container {
-        font-size: 24px;
-        line-height: 1.6;
+        font-size: 20px;
     }
 
     .grid_box {
         flex-direction: column;
         gap: 20px;
     }
+
     .contact-title {
         font-size: 16px;
     }
-    .btn_wrap img {
-        width: 20px;
-        height: 20px;
-    }
-
-    .contact-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
 
     .gallery-grid {
-        grid-template-columns: repeat(3, 1fr); /* 태블릿에서는 가로 2개 */
+        gap: 8px;
     }
 }
 
-@media (max-width: 600px) {
-
+@media (max-width: 768px) {
     #wrap, #gallery-section {
-        padding: 0 10px; /* 모바일에서 양쪽 여백 조정 */
+        padding: 0 10px;
     }
 
     .name1, .name2 {
@@ -391,50 +242,28 @@ body, html {
         font-size: 22px;
     }
 
-    .event-date, .event-location {
-        font-size: 22px;
-    }
-
     .message-container {
-        font-size: 1em; /* 모바일에서 폰트 크기 조정 */
-        padding: 0 5px; /* 모바일에서 여백 조정 */
+        font-size: 18px;
+        padding: 0 5px;
     }
 
     .grid_box {
         gap: 15px;
     }
+
     .contact-title {
         font-size: 14px;
-    }
-    .info_detail {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-    .btn_wrap img {
-        width: 18px;
-        height: 18px;
-    }
-
-    .contact-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
     }
 
     .gallery-title img {
         width: 90%;
     }
-    
+
     .gallery-grid {
-        gap: 5px; /* 모바일에서 썸네일 간격을 줄임 */
-        padding: 0 10px; /* 양쪽에 패딩을 추가하여 화면에 맞춤 */
+        gap: 5px;
     }
 
     .gallery-item {
-        padding-top: calc(33.33% - 10px); /* 모바일에서 각 썸네일의 크기를 줄여 화면에 맞춤 */
-        background-size: cover;
-        background-position: center;
+        padding-top: calc(33.33% - 5px);
     }
-
-
 }
