@@ -295,28 +295,30 @@ body, html {
     margin: 0 auto;
 }
 
+/* Gallery Thumbnail Styles */
 .gallery-item {
-    display: block;
-    width: 100%;
-    padding-top: 100%; /* Aspect ratio */
+    width: 150px; /* 원하는 썸네일 너비 */
+    height: 150px; /* 원하는 썸네일 높이 */
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
 .img_frame {
+    width: 100%; /* 썸네일의 너비에 맞추기 */
+    height: 100%; /* 썸네일의 높이에 맞추기 */
+    object-fit: cover; /* 썸네일 크기에 맞게 잘라내기 */
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0; /* Hidden by default, only for background styling */
+    opacity: 0; /* 기본 이미지를 덮는 프레임 스타일 */
 }
 
 /* Lightbox (PhotoSwipe) Styles */
 .pswp {
     z-index: 1000;
 }
+
 
 
 
@@ -416,4 +418,6 @@ body, html {
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     }
+
+
 }
