@@ -86,16 +86,22 @@
     <audio id="mp3_player" src="bgm/calm_02.mp3" autoplay muted loop style="display:none;"></audio>
 
     <script>
-        // 페이지 로딩 시 자동 재생 (음소거 상태)
         document.addEventListener('DOMContentLoaded', function() {
             const audio = document.getElementById('mp3_player');
-            audio.muted = true; // 초기 음소거 상태
-            audio.play().catch(error => {
-                console.log("자동 재생이 차단되었습니다: ", error);
+            const button = document.querySelector('.bgm_play_btn');
+
+            // 초기 음소거 상태로 자동 재생 시도
+            audio.muted = true;
+            audio.play().then(() => {
+                console.log("음악이 음소거 상태로 자동 재생되었습니다.");
+            }).catch(error => {
+                console.log("자동 재생이 차단되었습니다:", error);
             });
+
+            // 버튼 클릭 시 음소거 해제 및 재생/정지
+            button.addEventListener('click', toggleAudio);
         });
 
-        // 재생/멈춤 버튼 기능
         function toggleAudio() {
             const audio = document.getElementById('mp3_player');
             const button = document.querySelector('.bgm_play_btn');
