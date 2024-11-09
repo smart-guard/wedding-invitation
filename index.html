@@ -117,10 +117,11 @@
                 audio.play().catch(error => {
                     console.log("재생에 실패했습니다:", error);
                 });
-                button.classList.add('stop'); // 멈춤 아이콘으로 전환
+                button.classList.remove('stop'); // 재생 아이콘으로 전환
+                
             } else {
                 audio.pause();
-                button.classList.remove('stop'); // 재생 아이콘으로 전환
+                button.classList.add('stop'); // 멈춤 아이콘으로 전환
                 
             }
         }        
