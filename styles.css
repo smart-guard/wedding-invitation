@@ -298,11 +298,11 @@ body, html {
     }
 
     .name1, .name2 {
-        font-size: 3vw; /* 모바일에서 자연스럽게 줄어든 이름 크기 */
+        font-size: 5vw; /* 모바일에서 자연스럽게 줄어든 이름 크기 */
     }
 
     .ampersand-img {
-        width: 2vw;
+        width: 3vw;
     }
 
     .event-details {
@@ -320,7 +320,7 @@ body, html {
     }
     
     .event-date, .event-location {
-        font-size: 3vw; /* 모바일에서 축소된 날짜 및 장소 폰트 크기 */
+        font-size: 5vw; /* 모바일에서 축소된 날짜 및 장소 폰트 크기 */
         line-height: 1.2em;
     }
 
