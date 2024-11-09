@@ -240,12 +240,11 @@
     
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const galleryElements = document.querySelectorAll('.gallery-item');
-            const pswpElement = document.querySelector('.pswp');
-        
+    
             // 이미지 배열 생성
-            const items = Array.from(galleryElements).map(function(el) {
+            const items = Array.from(galleryElements).map(function (el) {
                 const size = el.getAttribute('data-size').split('x');
                 return {
                     src: el.getAttribute('href'),
@@ -253,32 +252,37 @@
                     h: parseInt(size[1], 10)
                 };
             });
-        
+    
             // 이미지 클릭 시 PhotoSwipe 열기
-            galleryElements.forEach(function(el, index) {
-                el.addEventListener('click', function(event) {
+            galleryElements.forEach(function (el, index) {
+                el.addEventListener('click', function (event) {
                     event.preventDefault();
                     openPhotoSwipe(index);
                 });
             });
-        
+    
             function openPhotoSwipe(index) {
+                const pswpElement = document.querySelectorAll('.pswp')[0];
                 const options = {
                     index: index,
                     bgOpacity: 0.8,
                     showHideOpacity: true,
-                    closeOnScroll: false,
-                    closeOnVerticalDrag: true,
-                    tapToClose: true,
-                    history: false, // 브라우저의 히스토리에 영향을 주지 않도록 설정
-                    shareEl: false  // 공유 버튼 숨기기
+                    history: false,
+                    focus: false,
+                    showAnimationDuration: 0,
+                    hideAnimationDuration: 0,
+                    loop: true,
+                    tapToToggleControls: true,  // 모바일에서 탭하면 컨트롤 나타나도록 설정
                 };
-        
                 const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
                 gallery.init();
+    
+                // 추가 탐색 이벤트 리스너 설정 (모바일에 필요한 초기화)
+                gallery.listen('afterChange', function () {
+                    gallery.updateSize(true); // 변경 후 모바일 화면에 맞게 재조정
+                });
             }
         });
-        
     </script>
             
 
