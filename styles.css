@@ -403,12 +403,12 @@ body::-webkit-scrollbar {
     }
 
     .ampersand-img {
-        width: 4vw;
+        width: 5vw;
     }
 
     /* 날짜 및 장소 정보 */
     .event-details {
-        margin-top: 600px; /* 위치 조정 */
+        margin-top: 450px; /* 위치 조정 */
         padding: 10px 0;
         position: relative; /* 절대 위치를 상대 위치로 변경 */
     }
@@ -434,12 +434,12 @@ body::-webkit-scrollbar {
     }
 
     .bgm_play_btn {
-        width: 28px;
-        height: 28px;
+        width: 4px;
+        height: 4px;
     }
     .bgm_play_btn::before {
-        width: 8px;
-        height: 8px;
+        width: 4px;
+        height: 4px;
         border-radius: 1px;
     }
 
