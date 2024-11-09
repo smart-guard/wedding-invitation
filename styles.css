@@ -8,19 +8,13 @@
 body, html {
     font-family: 'Nanum Myeongjo', serif;
     background-color: #f9f9f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    flex-direction: column;
     overflow-x: hidden; /* 가로 스크롤 숨기기 */
-    overflow-y: scroll; /* 세로 스크롤 허용 */
+    overflow-y: auto; /* 세로 스크롤 허용 */
     -ms-overflow-style: none; /* IE, Edge */
     scrollbar-width: none; /* Firefox */
     touch-action: pan-y;
 }
 
-/* 스크롤바를 숨기기 위한 추가 스타일 */
 body::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
 }
@@ -29,7 +23,6 @@ body::-webkit-scrollbar {
 /* Wrapper */
 #wrap, #gallery-section {
     width: 100%;
-    max-width: 800px;
     margin: 0 auto;
     overflow: hidden;
     text-align: center;
@@ -41,7 +34,6 @@ body::-webkit-scrollbar {
 #area1 {
     position: relative;
     width: 100%;
-    max-width: 800px;
     text-align: center;
 }
 
@@ -49,6 +41,7 @@ body::-webkit-scrollbar {
 .background-img {
     width: 100%;
     height: auto;
+    object-fit: cover;
     opacity: 1.0;
 }
 
@@ -129,53 +122,10 @@ body::-webkit-scrollbar {
 }
 
 /* 장식 이미지 */
-.invite-text-img {
-    width:800px; 
-    height:249px;
-    margin: 20px 0;
-}
-
-/* 장식 이미지 */
-.invite-flowers-img {
+.invite-text-img, .invite-flowers-img {
     width: 100%;
     height: auto;
     margin: 20px 0;
-}
-
-/* 연락처 섹션 스타일 */
-.call, .contact-area {
-    width: 100%;
-    max-width: 800px;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.grid_box {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin: 20px 0;
-}
-
-/* 연락처 제목 스타일 */
-.contact-title {
-    color: #0066cc;
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-/* 연락처 아이콘 스타일 */
-.grid_box img {
-    width: 24px;
-    height: 24px;
-}
-
-/* 연락처 목록 스타일 */
-.contact-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
 /* 연락처 세부 정보 */
@@ -283,9 +233,7 @@ body::-webkit-scrollbar {
 /* 반응형 디자인 - 태블릿 */
 @media (max-width: 1024px) {
     #wrap, #gallery-section {
-        width: 100%;   /* 화면 너비에 맞춤 */
-        max-width: 100%;  /* 고정된 최대 폭을 제거 */
-        padding: 0 5px; /* 모바일에서 여백 조정 */
+        padding: 0 10px;
     }
 
     /* 배경 이미지가 화면에 맞게 조정 */
@@ -321,16 +269,6 @@ body::-webkit-scrollbar {
         line-height: 1.2em;
     }
 
-    /* 연락처 섹션 */
-    .grid_box {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .contact-title {
-        font-size: 16px;
-    }
-
     /* 갤러리 타이틀 이미지 */
     .gallery-title img {
         width: 90%;
@@ -356,10 +294,9 @@ body::-webkit-scrollbar {
 /* 반응형 디자인 - 모바일 (가로 768px 이하) */
 @media (max-width: 768px) {
     #wrap, #gallery-section {
-        width: 100%;   /* 화면 너비에 맞춤 */
-        max-width: 100%;  /* 고정된 최대 폭을 제거 */
-        padding: 0 5px; /* 모바일에서 여백 조정 */
+        padding: 0 10px;
     }
+
     /* 배경 이미지가 화면에 맞게 조정 */
     .background-img {
         width: 100%;
@@ -391,15 +328,6 @@ body::-webkit-scrollbar {
     .event-date, .event-location {
         font-size: 5vw; /* 모바일에서 줄어든 폰트 크기 */
         line-height: 1.2em;
-    }
-
-    /* 연락처 섹션 */
-    .grid_box {
-        gap: 15px;
-    }
-
-    .contact-title {
-        font-size: 14px;
     }
 
     /* 갤러리 타이틀 이미지 */
@@ -448,11 +376,8 @@ body::-webkit-scrollbar {
 
 /* 반응형 디자인 - 모바일 (가로 480px 이하) */
 @media (max-width: 480px) {
-
     #wrap, #gallery-section {
-        width: 100%;   /* 화면 너비에 맞춤 */
-        max-width: 100%;  /* 고정된 최대 폭을 제거 */
-        padding: 0 5px; /* 모바일에서 여백 조정 */
+        padding: 0 5px;
     }
     
     /* 배경 이미지가 화면에 맞게 조정 */
@@ -480,7 +405,7 @@ body::-webkit-scrollbar {
     /* 갤러리 그리드 */
     .gallery-grid {
         grid-template-columns: repeat(3, 1fr); /* 여전히 가로 3개의 열 유지 */
-        gap: 3px; /* 이미지 간격을 모바일 환경에 맞게 조정 */
+        gap: 2px; /* 이미지 간격을 모바일 환경에 맞게 조정 */
     }
 
     .gallery-item {
