@@ -13,9 +13,18 @@ body, html {
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
-    overflow-x: hidden;
+    overflow-x: hidden; /* 가로 스크롤 숨기기 */
+    overflow-y: scroll; /* 세로 스크롤 허용 */
+    -ms-overflow-style: none; /* IE, Edge */
+    scrollbar-width: none; /* Firefox */
     touch-action: pan-y;
 }
+
+/* 스크롤바를 숨기기 위한 추가 스타일 */
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
 
 /* Wrapper */
 #wrap, #gallery-section {
@@ -65,7 +74,7 @@ body, html {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 30%;
+    top: 23%;
 }
 
 /* 이름 크기 */
@@ -75,14 +84,14 @@ body, html {
     color: #C68F69;
     letter-spacing: 0.24em;
     line-height: 1.4em;
-    margin: 10px 0;
+    margin: 22px 0;
 }
 
 /* & 기호 */
 .ampersand-img {
     width: 50px;
     height: auto;
-    margin: 10px 0;
+    margin: 22px 0;
     position: relative;
 }
 
@@ -109,16 +118,25 @@ body, html {
 /* 초대 메시지 */
 .message-container {
     color: #333;
-    font-size: 24px;
+    font-size: 34px;
     line-height: 1.5;
     font-family: 'Nanum Myeongjo', serif;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 40px;
     padding: 0 10px;
+    letter-spacing: 0em;
+    line-height: 2.3em;
 }
 
 /* 장식 이미지 */
-.invite-text-img, .invite-flowers-img {
+.invite-text-img {
+    width:800px; 
+    height:249px;
+    margin: 20px 0;
+}
+
+/* 장식 이미지 */
+.invite-flowers-img {
     width: 100%;
     height: auto;
     margin: 20px 0;
@@ -206,57 +224,60 @@ body, html {
 
 /* 배경 음악 버튼 스타일 */
 .bgm_play_btn {
-    position: fixed; /* 화면 오른쪽 상단에 고정 */
+    position: fixed;
     top: 20px;
     right: 20px;
-    width: 40px;
-    height: 40px;
+    width: 48px;                 /* 버튼 크기 */
+    height: 48px;
     border: none;
-    border-radius: 50%; /* 둥근 모양 */
-    background-color: rgba(200, 200, 200, 0.8); /* 반투명 회색 배경 */
+    border-radius: 50%;          /* 원형 버튼 */
+    background-color: rgba(160, 160, 160, 0.9); /* 더 어두운 회색 배경 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* 버튼 음영 */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000; /* 다른 요소보다 위에 위치 */
-    transition: background-color 0.3s; /* 배경색 전환 효과 */
+    z-index: 1000;
+    transition: background-color 0.3s ease;
 }
 
 .bgm_play_btn:hover {
-    background-color: rgba(180, 180, 180, 0.9); /* 호버 시 배경색 약간 진하게 */
+    background-color: rgba(140, 140, 140, 0.9); /* 호버 시 색상 변경 */
 }
 
-/* 재생 아이콘 (삼각형) */
+/* 재생 아이콘 (흰색 삼각형) */
 .bgm_play_btn::before {
     content: '';
     display: inline-block;
     width: 0;
     height: 0;
-    border-left: 12px solid #fff; /* 흰색 삼각형 모양의 재생 아이콘 */
+    border-left: 12px solid #ffffff; /* 흰색 삼각형 */
     border-top: 8px solid transparent;
     border-bottom: 8px solid transparent;
+    position: relative;
+    left: 2px; /* 삼각형이 버튼 가운데 위치하도록 조정 */
 }
 
-/* 멈춤 아이콘 (두 줄) */
-.bgm_play_btn.pause::before {
+/* 멈춤 아이콘 (흰색 두 줄) */
+.bgm_play_btn.pause::before,
+.bgm_play_btn.pause::after {
     content: '';
-    display: inline-block;
-    width: 6px;
-    height: 18px;
-    background-color: #fff; /* 흰색 막대 */
-    position: relative;
-    margin-right: 2px;
+    width: 6px;                  /* 막대 너비 */
+    height: 20px;                /* 막대 높이 */
+    background-color: #ffffff;   /* 흰색 막대 */
+    border-radius: 1px;          /* 막대 끝 둥글게 */
+    position: absolute;
+}
+
+.bgm_play_btn.pause::before {
+    left: 13px;                  /* 첫 번째 막대 위치 */
 }
 
 .bgm_play_btn.pause::after {
-    content: '';
-    display: inline-block;
-    width: 6px;
-    height: 18px;
-    background-color: #fff; /* 흰색 막대 */
-    position: relative;
-    margin-left: 2px;
+    right: 13px;                 /* 두 번째 막대 위치 */
 }
+
+
 
 
 /* 반응형 디자인 - 태블릿과 모바일 */

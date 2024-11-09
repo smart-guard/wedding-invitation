@@ -21,6 +21,10 @@
 
     <link rel="stylesheet" href="/dist/css/photoswipe.css?v=W9waj8wPlaM2Wxibluk8d_mZ_q6F7HYAZkBp8xErSEg">
     <link rel="stylesheet" href="/css/swiper-bundle.min.css?v=xchAvEWK4PlA6kNrPgulShWGzRbOsV8e_ZC3GfYUZKE">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet">
@@ -73,48 +77,53 @@
         <div id="area2" class="templatearea">
             <img src="image/invitation-text.png" alt="초대장 상단 이미지" class="invite-text-img">
             <div class="message-container">
-                <p>있는 그대로 사랑하고<br>서로의 존재를 감사하며<br>변함없이 서로를 아끼며 살겠습니다.<br>서로를 향한 사랑과 믿음으로<br>하나가 되는 자리에 함께해 주세요.</p>
+                <p>있는 그대로 사랑하고
+                    <br>서로의 존재를 감사하며
+                    <br>변함없이 서로를 아끼며 살겠습니다.
+                    <br>서로를 향한 사랑과 믿음으로
+                    <br>하나가 되는 자리에 함께해 주세요.</p>
             </div>
             <img src="image/invitation-flowers.png" alt="초대장 하단 이미지" class="invite-flowers-img">
         </div>
     </div>
 
     <!-- 배경 음악 버튼 -->
+    <input type="hidden" id="Bgm_Auto_Use_YN" name="Bgm_Auto_Use_YN" value="Y">
     <button type="button" class="bgm_play_btn pause" onclick="toggleAudio()"></button>
     
     <!-- 배경 음악 설정 -->
     <audio id="mp3_player" src="bgm/calm_02.mp3" autoplay muted loop style="display:none;"></audio>
-
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const audio = document.getElementById('mp3_player');
-            const button = document.querySelector('.bgm_play_btn');
-
-            // 초기 음소거 상태로 자동 재생 시도
-            audio.muted = true;
-            audio.play().then(() => {
-                console.log("음악이 음소거 상태로 자동 재생되었습니다.");
-            }).catch(error => {
-                console.log("자동 재생이 차단되었습니다:", error);
-            });
-
-            // 버튼 클릭 시 음소거 해제 및 재생/정지
-            button.addEventListener('click', toggleAudio);
+        
+            // 음소거 상태로 자동 재생 시도 (일부 브라우저에서는 차단될 수 있음)
+             // 강제로 재생을 시도 (음소거 상태)
+             audio.muted = true;
+             audio.play().then(() => {
+                 audio.muted = false; // 음소거 해제
+             }).catch(error => {
+                 console.log("자동 재생이 차단되었습니다:", error);
+             });
         });
-
+        
         function toggleAudio() {
             const audio = document.getElementById('mp3_player');
             const button = document.querySelector('.bgm_play_btn');
-
+        
             if (audio.paused) {
                 audio.muted = false; // 음소거 해제
-                audio.play();
-                button.classList.remove('pause'); // 멈춤 아이콘으로 전환
+                audio.play().catch(error => {
+                    console.log("재생에 실패했습니다:", error);
+                });
+                button.classList.add('pause'); // 멈춤 아이콘으로 전환
             } else {
                 audio.pause();
-                button.classList.add('pause'); // 재생 아이콘으로 전환
+                button.classList.remove('pause'); // 재생 아이콘으로 전환
+                
             }
-        }
+        }        
     </script>
 
     <section id="gallery-section">
@@ -129,62 +138,62 @@
                 <div class="gallery-grid">
                     <!-- Each gallery item -->
                     <figure>
-                        <a href="image/photo01.jpg" class="gallery-item" style="background-image: url('image/thumb01.jpg')">
+                        <a href="image/photo01.jpg" class="gallery-item" style="background-image: url('image/thumb01.jpg')" data-size="800x1000">
                             <img src="/img/skin/img_frame.png" class="img_frame" alt="">
                         </a> 
                     </figure>
                     <figure>
-                        <a href="image/photo02.jpg" class="gallery-item" style="background-image: url('image/thumb02.jpg')">
+                        <a href="image/photo02.jpg" class="gallery-item" style="background-image: url('image/thumb02.jpg')" data-size="800x1000">
                             <img src="/img/skin/img_frame.png" class="img_frame" alt="">
                         </a> 
                     </figure>
                     <figure>
-                        <a href="image/photo03.jpg" class="gallery-item" style="background-image: url('image/thumb03.jpg')">
+                        <a href="image/photo03.jpg" class="gallery-item" style="background-image: url('image/thumb03.jpg')" data-size="800x1000">
                             <img src="/img/skin/img_frame.png" class="img_frame" alt="">
                         </a> 
                     </figure>
                     <figure>
-                        <a href="image/photo04.jpg" class="gallery-item" style="background-image: url('image/thumb05.jpg')">
+                        <a href="image/photo04.jpg" class="gallery-item" style="background-image: url('image/thumb05.jpg')" data-size="800x1000">
                             <img src="/img/skin/img_frame.png" class="img_frame" alt="">
                         </a> 
                     </figure>
                     <figure>
-                        <a href="image/photo05.jpg" class="gallery-item" style="background-image: url('image/thumb04.jpg')">
+                        <a href="image/photo05.jpg" class="gallery-item" style="background-image: url('image/thumb04.jpg')" data-size="800x1000">
                             <img src="/img/skin/img_frame.png" class="img_frame" alt="">
                         </a> 
                     </figure>
                     <figure>
-                        <a href="image/photo06.jpg" class="gallery-item" style="background-image: url('image/thumb06.jpg')">
+                        <a href="image/photo06.jpg" class="gallery-item" style="background-image: url('image/thumb06.jpg')" data-size="800x1000">
                             <img src="/img/skin/img_frame.png" class="img_frame" alt="">
                         </a> 
                     </figure>
                     <figure>
-                        <a href="image/photo07.jpg" class="gallery-item" style="background-image: url('image/thumb07.jpg')">
+                        <a href="image/photo07.jpg" class="gallery-item" style="background-image: url('image/thumb07.jpg')" data-size="800x1000">
                             <img src="/img/skin/img_frame.png" class="img_frame" alt="">
                         </a> 
                     </figure>
                     <figure>
-                        <a href="image/photo08.jpg" class="gallery-item" style="background-image: url('image/thumb08.jpg')">
+                        <a href="image/photo08.jpg" class="gallery-item" style="background-image: url('image/thumb08.jpg')" data-size="800x1000">
                             <img src="/img/skin/img_frame.png" class="img_frame" alt="">
                         </a> 
                     </figure>
                     <figure>
-                        <a href="image/photo09.jpg" class="gallery-item" style="background-image: url('image/thumb09.jpg')">
+                        <a href="image/photo09.jpg" class="gallery-item" style="background-image: url('image/thumb09.jpg')" data-size="800x1000">
                             <img src="/img/skin/img_frame.png" class="img_frame" alt="">
                         </a> 
                     </figure>
                     <figure>
-                        <a href="image/photo10.jpg" class="gallery-item" style="background-image: url('image/thumb10.jpg')">
+                        <a href="image/photo10.jpg" class="gallery-item" style="background-image: url('image/thumb10.jpg')" data-size="800x1000">
                             <img src="/img/skin/img_frame.png" class="img_frame" alt="">
                         </a> 
                     </figure>
                     <figure>
-                        <a href="image/photo11.jpg" class="gallery-item" style="background-image: url('image/thumb11.jpg')">
+                        <a href="image/photo11.jpg" class="gallery-item" style="background-image: url('image/thumb11.jpg')" data-size="800x1000">
                             <img src="/img/skin/img_frame.png" class="img_frame" alt="">
                         </a> 
                     </figure>
                     <figure>
-                        <a href="image/photo12.jpg" class="gallery-item" style="background-image: url('image/thumb12.jpg')">
+                        <a href="image/photo12.jpg" class="gallery-item" style="background-image: url('image/thumb12.jpg')" data-size="800x1000">
                             <img src="/img/skin/img_frame.png" class="img_frame" alt="">
                         </a> 
                     </figure>
@@ -204,6 +213,9 @@
                         <div class="pswp__top-bar">
                             <div class="pswp__counter"></div>
                             <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                            <button class="pswp__button pswp__button--share" title="Share"></button>
+                            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
                             <div class="pswp__preloader">
                                 <div class="pswp__preloader__icn">
                                     <div class="pswp__preloader__cut">
@@ -212,8 +224,14 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                            <div class="pswp__share-tooltip"></div>
+                        </div>
                         <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
                         <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                        <div class="pswp__caption">
+                            <div class="pswp__caption__center"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -223,11 +241,12 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var galleryElements = document.querySelectorAll('.gallery-item');
+            const galleryElements = document.querySelectorAll('.gallery-item');
+            const pswpElement = document.querySelector('.pswp');
         
             // 이미지 배열 생성
-            var items = Array.from(galleryElements).map(function(el) {
-                var size = el.getAttribute('data-size').split('x');
+            const items = Array.from(galleryElements).map(function(el) {
+                const size = el.getAttribute('data-size').split('x');
                 return {
                     src: el.getAttribute('href'),
                     w: parseInt(size[0], 10),
@@ -244,16 +263,22 @@
             });
         
             function openPhotoSwipe(index) {
-                var pswpElement = document.querySelectorAll('.pswp')[0];
-                var options = {
+                const options = {
                     index: index,
                     bgOpacity: 0.8,
-                    showHideOpacity: true
+                    showHideOpacity: true,
+                    closeOnScroll: false,
+                    closeOnVerticalDrag: true,
+                    tapToClose: true,
+                    history: false, // 브라우저의 히스토리에 영향을 주지 않도록 설정
+                    shareEl: false  // 공유 버튼 숨기기
                 };
-                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+        
+                const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
                 gallery.init();
             }
         });
+        
     </script>
             
 
