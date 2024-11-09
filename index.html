@@ -51,8 +51,6 @@
         <!-- 첫 번째 영역 (배경 이미지와 주요 정보) -->
         <div id="area1" class="templatearea">
             <img src="image/wedding-bg.png" alt="배경 이미지" class="background-img">
-
-            <button type="button" class="bgm_play_btn pause" onclick="toggleAudio()"></button>
     
             <!-- 오버레이 컨텐츠 -->
             <div class="content-overlay">
@@ -81,8 +79,11 @@
         </div>
     </div>
 
+    <!-- 배경 음악 버튼 -->
+    <button type="button" class="bgm_play_btn pause" onclick="toggleAudio()"></button>
+    
     <!-- 배경 음악 설정 -->
-    <audio id="mp3_player" src="bgm/calm_02.mp3" autoplay loop style="display:none;"></audio>
+    <audio id="mp3_player" src="bgm/calm_02.mp3" autoplay muted loop style="display:none;"></audio>
 
     <script>
         // 페이지 로딩 시 자동 재생 (음소거 상태)

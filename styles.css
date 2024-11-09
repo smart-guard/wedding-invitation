@@ -204,9 +204,9 @@ body, html {
     margin-bottom: 20px;
 }
 
-/* 배경 음악 버튼 스타일 */
+/* 배경 음악 버튼 고정 스타일 */
 .bgm_play_btn {
-    position: absolute;
+    position: fixed; /* 화면 오른쪽 상단에 고정 */
     top: 10px;
     right: 10px;
     width: 40px;
@@ -217,6 +217,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1000; /* 다른 요소보다 위에 위치 */
 }
 
 /* 재생 아이콘 (삼각형) */
