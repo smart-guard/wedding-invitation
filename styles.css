@@ -356,9 +356,13 @@ body::-webkit-scrollbar {
         height: 36px;
     }
     .bgm_play_btn::before {
+        border-left: 10px solid #ffffff;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+    }
+    .bgm_play_btn.stop::before {
         width: 10px;
         height: 10px;
-        border-radius: 1px;
     }
     .pswp__button--arrow--left,
     .pswp__button--arrow--right {
@@ -437,13 +441,17 @@ body::-webkit-scrollbar {
     }
 
     .bgm_play_btn {
-        width: 4px;
-        height: 4px;
+        width: 28px;
+        height: 28px;
     }
     .bgm_play_btn::before {
-        width: 4px;
-        height: 4px;
-        border-radius: 1px;
+        border-left: 8px solid #ffffff;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+    }
+    .bgm_play_btn.stop::before {
+        width: 3px;
+        height: 2px;
     }
 
     .pswp__button--arrow--left,
