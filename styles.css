@@ -282,6 +282,17 @@ body::-webkit-scrollbar {
 
 /* 반응형 디자인 - 태블릿 */
 @media (max-width: 1024px) {
+    #wrap, #gallery-section {
+        width: 100%;   /* 화면 너비에 맞춤 */
+        max-width: 100%;  /* 고정된 최대 폭을 제거 */
+        padding: 0 5px; /* 모바일에서 여백 조정 */
+    }
+
+    .background-img {
+        width: 100%; /* 배경 이미지를 화면 너비에 맞게 조정 */
+        max-width: 100%;
+    }
+
     body, html {
         font-size: 90%; /* 태블릿에서 폰트 및 기본 크기 축소 */
     }
@@ -346,13 +357,15 @@ body::-webkit-scrollbar {
 
 /* 반응형 디자인 - 모바일 (가로 768px 이하) */
 @media (max-width: 768px) {
-    body, html {
-        font-size: 85%; /* 모바일에서 폰트 및 기본 크기 추가 축소 */
-    }
-    
-    /* 전체 섹션 */
     #wrap, #gallery-section {
-        padding: 0 10px;
+        width: 100%;   /* 화면 너비에 맞춤 */
+        max-width: 100%;  /* 고정된 최대 폭을 제거 */
+        padding: 0 5px; /* 모바일에서 여백 조정 */
+    }
+
+    .background-img {
+        width: 100%; /* 배경 이미지를 화면 너비에 맞게 조정 */
+        max-width: 100%;
     }
 
     /* 이름 섹션 */
@@ -436,6 +449,18 @@ body::-webkit-scrollbar {
 
 /* 반응형 디자인 - 모바일 (가로 480px 이하) */
 @media (max-width: 480px) {
+
+    #wrap, #gallery-section {
+        width: 100%;   /* 화면 너비에 맞춤 */
+        max-width: 100%;  /* 고정된 최대 폭을 제거 */
+        padding: 0 5px; /* 모바일에서 여백 조정 */
+    }
+
+    .background-img {
+        width: 100%; /* 배경 이미지를 화면 너비에 맞게 조정 */
+        max-width: 100%;
+    }
+    
     /* 이름 섹션 */
     .name1, .name2 {
         font-size: 7vw;
