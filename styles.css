@@ -382,7 +382,14 @@ body::-webkit-scrollbar {
     }
 
     .ampersand-img {
-        width: 3vw;
+        width: 4vw;
+    }
+
+    /* 날짜 및 장소 정보 */
+    .event-details {
+        margin-top: 600px; /* 위치 조정 */
+        padding: 10px 0;
+        position: relative; /* 절대 위치를 상대 위치로 변경 */
     }
 
     /* 날짜 및 장소 정보 */
