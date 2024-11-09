@@ -282,6 +282,10 @@ body::-webkit-scrollbar {
 
 /* 반응형 디자인 - 태블릿 */
 @media (max-width: 1024px) {
+    body, html {
+        font-size: 90%; /* 태블릿에서 폰트 및 기본 크기 축소 */
+    }
+
     /* 이름 섹션 */
     .name1, .name2 {
         font-size: 5vw; /* 태블릿에서 적당히 줄어든 크기 */
@@ -342,6 +346,10 @@ body::-webkit-scrollbar {
 
 /* 반응형 디자인 - 모바일 (가로 768px 이하) */
 @media (max-width: 768px) {
+    body, html {
+        font-size: 85%; /* 모바일에서 폰트 및 기본 크기 추가 축소 */
+    }
+    
     /* 전체 섹션 */
     #wrap, #gallery-section {
         padding: 0 10px;
