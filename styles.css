@@ -199,7 +199,7 @@ body::-webkit-scrollbar {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 가로 3개 열 유지 */
     gap: 10px;
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -280,31 +280,35 @@ body::-webkit-scrollbar {
 
 
 
-/* 반응형 디자인 - 태블릿과 모바일 */
+/* 반응형 디자인 - 태블릿 */
 @media (max-width: 1024px) {
+    /* 이름 섹션 */
     .name1, .name2 {
-        font-size: 5vw;
+        font-size: 5vw; /* 태블릿에서 적당히 줄어든 크기 */
     }
 
     .ampersand-img {
-        width: 4vw;
+        width: 4vw; /* 태블릿에서 '&' 기호 크기 */
     }
 
+    /* 초대 메시지 */
     .message-container {
         font-size: 1em;
         padding: 0 5px;
     }
 
+    /* 날짜 및 장소 정보 */
     .event-details {
-        margin-top: 800px; /* 상단 여백을 줄여 위치 조정 */
+        margin-top: 400px; /* 상단 여백 조정 */
         padding: 5px 0;
     }
     
     .event-date, .event-location {
-        font-size: 5vw; /* 모바일에서 축소된 날짜 및 장소 폰트 크기 */
+        font-size: 4vw; /* 태블릿에서 줄어든 날짜 및 장소 폰트 크기 */
         line-height: 1.2em;
     }
 
+    /* 연락처 섹션 */
     .grid_box {
         flex-direction: column;
         gap: 20px;
@@ -314,43 +318,62 @@ body::-webkit-scrollbar {
         font-size: 16px;
     }
 
+    /* 갤러리 타이틀 이미지 */
+    .gallery-title img {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    /* 갤러리 그리드 */
     .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); /* 가로 3개의 열 유지 */
         gap: 8px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .gallery-item {
+        padding-top: 100%; /* 정사각형 비율 유지 */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }
 
+/* 반응형 디자인 - 모바일 (가로 768px 이하) */
 @media (max-width: 768px) {
+    /* 전체 섹션 */
     #wrap, #gallery-section {
         padding: 0 10px;
     }
 
+    /* 이름 섹션 */
     .name1, .name2 {
-        font-size: 5vw; /* 모바일에서 자연스럽게 줄어든 이름 크기 */
+        font-size: 6vw; /* 모바일에서 더 줄어든 이름 크기 */
     }
 
     .ampersand-img {
-        width: 3vw;
+        width: 4vw;
     }
 
-    .event-details {
-        font-size: 16px;
-    }
-
+    /* 초대 메시지 */
     .message-container {
         font-size: 0.9em;
         padding: 0 5px;
     }
 
+    /* 날짜 및 장소 정보 */
     .event-details {
-        margin-top: 400px;
+        margin-top: 200px;
         padding: 5px 0;
     }
     
     .event-date, .event-location {
-        font-size: 5vw; /* 모바일에서 축소된 날짜 및 장소 폰트 크기 */
+        font-size: 5vw; /* 모바일에서 줄어든 폰트 크기 */
         line-height: 1.2em;
     }
 
+    /* 연락처 섹션 */
     .grid_box {
         gap: 15px;
     }
@@ -359,37 +382,56 @@ body::-webkit-scrollbar {
         font-size: 14px;
     }
 
+    /* 갤러리 타이틀 이미지 */
     .gallery-title img {
-        width: 90%;
+        width: 85%; /* 모바일에서 타이틀 이미지 크기 조정 */
+        margin-bottom: 20px;
     }
 
+    /* 갤러리 그리드 */
     .gallery-grid {
-        grid-template-columns: repeat(3, 1fr); /* 가로 3개의 열 유지 */
-        gap: 8px; /* 이미지 간격을 모바일 환경에 맞게 조정 */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .gallery-item {
-        padding-top: calc(33.33% - 5px);
+        padding-top: 100%; /* 정사각형 비율 유지 */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }
 
-
+/* 반응형 디자인 - 모바일 (가로 480px 이하) */
 @media (max-width: 480px) {
+    /* 이름 섹션 */
     .name1, .name2 {
-        font-size: 4vw; /* 모바일에서 더 축소된 이름 크기 */
+        font-size: 7vw;
     }
 
     .ampersand-img {
         width: 3vw;
     }
 
+    /* 날짜 및 장소 정보 */
     .event-date, .event-location {
-        font-size: 4vw; /* 모바일에서 축소된 날짜 및 장소 폰트 크기 */
+        font-size: 5vw;
         line-height: 1.2em;
     }
 
+    /* 갤러리 그리드 */
     .gallery-grid {
-        grid-template-columns: repeat(3, 1fr); /* 가로 3개의 열 유지 */
-        gap: 8px; /* 이미지 간격을 모바일 환경에 맞게 조정 */
+        grid-template-columns: repeat(3, 1fr); /* 여전히 가로 3개의 열 유지 */
+        gap: 5px; /* 이미지 간격을 모바일 환경에 맞게 조정 */
+    }
+
+    .gallery-item {
+        padding-top: 100%; /* 정사각형 비율 유지 */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }
+
