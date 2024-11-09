@@ -268,7 +268,7 @@ body, html {
     }
 
     .event-details {
-        margin-top: 400px; /* 상단 여백을 줄여 위치 조정 */
+        margin-top: 800px; /* 상단 여백을 줄여 위치 조정 */
         padding: 5px 0;
     }
     
@@ -314,7 +314,7 @@ body, html {
     }
 
     .event-details {
-        margin-top: 200px;
+        margin-top: 500px;
         padding: 5px 0;
     }
     
