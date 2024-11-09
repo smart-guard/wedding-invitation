@@ -51,6 +51,8 @@
         <!-- 첫 번째 영역 (배경 이미지와 주요 정보) -->
         <div id="area1" class="templatearea">
             <img src="image/wedding-bg.png" alt="배경 이미지" class="background-img">
+
+            <button type="button" class="bgm_play_btn pause" onclick="toggleAudio()"></button>
     
             <!-- 오버레이 컨텐츠 -->
             <div class="content-overlay">
@@ -79,35 +81,34 @@
         </div>
     </div>
 
-    <!-- 연락처 섹션 -->
-    <div id="area4" idx="4" class="contact-area">
-        <div class="contact-container">
-            <div class="contact-section groom">
-                <h3 class="contact-title">신랑</h3>
-                <div class="contact-links">
-                    <a href="tel:01029011383"><img src="https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_24_call.svg" alt="전화 아이콘"></a>
-                    <a href="sms:01029011383"><img src="https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_24_sms.svg" alt="SMS 아이콘"></a>
-                </div>
-                <div class="relative-section">
-                    <h4>신랑 측 혼주</h4>
-                    <p><span>어머니:</span> 한광례 <a href="tel:01094204768"><img src="https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_24_call.svg" alt="전화 아이콘"></a> <a href="sms:01094204768"><img src="https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_24_sms.svg" alt="SMS 아이콘"></a></p>
-                </div>
-            </div>
-            
-            <div class="contact-section bride">
-                <h3 class="contact-title">신부</h3>
-                <div class="contact-links">
-                    <a href="tel:01066386130"><img src="https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_24_call.svg" alt="전화 아이콘"></a>
-                    <a href="sms:01066386130"><img src="https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_24_sms.svg" alt="SMS 아이콘"></a>
-                </div>
-                <div class="relative-section">
-                    <h4>신부 측 혼주</h4>
-                    <p><span>아버지:</span> 김황기 <a href="tel:01038074831"><img src="https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_24_call.svg" alt="전화 아이콘"></a> <a href="sms:01038074831"><img src="https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_24_sms.svg" alt="SMS 아이콘"></a></p>
-                    <p><span>어머니:</span> 김현숙 <a href="tel:01056624831"><img src="https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_24_call.svg" alt="전화 아이콘"></a> <a href="sms:01056624831"><img src="https://static.barunsoncard.com/barunsonmcard/invitation/icon/ico_24_sms.svg" alt="SMS 아이콘"></a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- 배경 음악 설정 -->
+    <audio id="mp3_player" src="bgm/calm_02.mp3" autoplay loop style="display:none;"></audio>
+
+    <script>
+        // 페이지 로딩 시 자동 재생 (음소거 상태)
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('mp3_player');
+            audio.muted = true; // 초기 음소거 상태
+            audio.play().catch(error => {
+                console.log("자동 재생이 차단되었습니다: ", error);
+            });
+        });
+
+        // 재생/멈춤 버튼 기능
+        function toggleAudio() {
+            const audio = document.getElementById('mp3_player');
+            const button = document.querySelector('.bgm_play_btn');
+
+            if (audio.paused) {
+                audio.muted = false; // 음소거 해제
+                audio.play();
+                button.classList.remove('pause'); // 멈춤 아이콘으로 전환
+            } else {
+                audio.pause();
+                button.classList.add('pause'); // 재생 아이콘으로 전환
+            }
+        }
+    </script>
 
     <section id="gallery-section">
         <!-- 갤러리 타이틀 이미지 -->
@@ -136,7 +137,47 @@
                         </a> 
                     </figure>
                     <figure>
-                        <a href="image/photo04.jpg" class="gallery-item" style="background-image: url('image/thumb04.jpg')">
+                        <a href="image/photo04.jpg" class="gallery-item" style="background-image: url('image/thumb05.jpg')">
+                            <img src="/img/skin/img_frame.png" class="img_frame" alt="">
+                        </a> 
+                    </figure>
+                    <figure>
+                        <a href="image/photo05.jpg" class="gallery-item" style="background-image: url('image/thumb04.jpg')">
+                            <img src="/img/skin/img_frame.png" class="img_frame" alt="">
+                        </a> 
+                    </figure>
+                    <figure>
+                        <a href="image/photo06.jpg" class="gallery-item" style="background-image: url('image/thumb06.jpg')">
+                            <img src="/img/skin/img_frame.png" class="img_frame" alt="">
+                        </a> 
+                    </figure>
+                    <figure>
+                        <a href="image/photo07.jpg" class="gallery-item" style="background-image: url('image/thumb07.jpg')">
+                            <img src="/img/skin/img_frame.png" class="img_frame" alt="">
+                        </a> 
+                    </figure>
+                    <figure>
+                        <a href="image/photo08.jpg" class="gallery-item" style="background-image: url('image/thumb08.jpg')">
+                            <img src="/img/skin/img_frame.png" class="img_frame" alt="">
+                        </a> 
+                    </figure>
+                    <figure>
+                        <a href="image/photo09.jpg" class="gallery-item" style="background-image: url('image/thumb09.jpg')">
+                            <img src="/img/skin/img_frame.png" class="img_frame" alt="">
+                        </a> 
+                    </figure>
+                    <figure>
+                        <a href="image/photo10.jpg" class="gallery-item" style="background-image: url('image/thumb10.jpg')">
+                            <img src="/img/skin/img_frame.png" class="img_frame" alt="">
+                        </a> 
+                    </figure>
+                    <figure>
+                        <a href="image/photo11.jpg" class="gallery-item" style="background-image: url('image/thumb11.jpg')">
+                            <img src="/img/skin/img_frame.png" class="img_frame" alt="">
+                        </a> 
+                    </figure>
+                    <figure>
+                        <a href="image/photo12.jpg" class="gallery-item" style="background-image: url('image/thumb12.jpg')">
                             <img src="/img/skin/img_frame.png" class="img_frame" alt="">
                         </a> 
                     </figure>
@@ -206,7 +247,7 @@
                 gallery.init();
             }
         });
-        </script>
+    </script>
             
 
 </body>

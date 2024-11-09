@@ -14,6 +14,7 @@ body, html {
     min-height: 100vh;
     flex-direction: column;
     overflow-x: hidden;
+    touch-action: pan-y;
 }
 
 /* Wrapper */
@@ -92,7 +93,7 @@ body, html {
     flex-direction: column;
     align-items: center;
     color: #C68F69;
-    margin-top: 20px; /* 위치 조정 */
+    margin-top: 800px; /* 위치 조정 */
     padding: 10px 0;
     position: relative; /* 절대 위치를 상대 위치로 변경 */
 }
@@ -191,6 +192,8 @@ body, html {
     background-size: cover;
     background-position: center;
     position: relative;
+    background-repeat: no-repeat;
+    aspect-ratio: 1; /* 정사각형 비율 유지 */
 }
 
 /* Title Image Styling */
@@ -200,6 +203,54 @@ body, html {
     height: auto;
     margin-bottom: 20px;
 }
+
+/* 배경 음악 버튼 스타일 */
+.bgm_play_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 재생 아이콘 (삼각형) */
+.bgm_play_btn::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 12px solid #333; /* 삼각형 모양의 재생 아이콘 */
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+/* 멈춤 아이콘 (두 줄) */
+.bgm_play_btn.pause::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 18px;
+    background-color: #333;
+    position: relative;
+    margin-right: 2px;
+}
+
+.bgm_play_btn.pause::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 18px;
+    background-color: #333;
+    position: relative;
+    margin-left: 2px;
+}
+
 
 /* 반응형 디자인 - 태블릿과 모바일 */
 @media (max-width: 1024px) {
@@ -217,7 +268,7 @@ body, html {
     }
 
     .event-details {
-        margin-top: 10px; /* 상단 여백을 줄여 위치 조정 */
+        margin-top: 400px; /* 상단 여백을 줄여 위치 조정 */
         padding: 5px 0;
     }
     
@@ -263,7 +314,7 @@ body, html {
     }
 
     .event-details {
-        margin-top: 5px;
+        margin-top: 200px;
         padding: 5px 0;
     }
     
@@ -285,7 +336,8 @@ body, html {
     }
 
     .gallery-grid {
-        gap: 5px;
+        grid-template-columns: repeat(3, 1fr); /* 가로 3개의 열 유지 */
+        gap: 8px; /* 이미지 간격을 모바일 환경에 맞게 조정 */
     }
 
     .gallery-item {
@@ -306,5 +358,10 @@ body, html {
     .event-date, .event-location {
         font-size: 6vw; /* 모바일에서 축소된 날짜 및 장소 폰트 크기 */
         line-height: 1.2em;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); /* 가로 3개의 열 유지 */
+        gap: 8px; /* 이미지 간격을 모바일 환경에 맞게 조정 */
     }
 }
